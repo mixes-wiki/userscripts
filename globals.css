@@ -1,0 +1,132 @@
+/*
+ * General
+ */
+.mixesDBorange, .mixesDBorange * {color: #f60 !important}
+.mixesDBorange-light, .mixesDBorange-light * {color: #fc0 !important}
+.big {font-size: larger}
+.floatL {float: left}
+.clear {clear: both}
+.bold {font-weight: 700}
+.grey {color: #828282}
+.green, .mdb-green {color: #090 !important}
+.medium {font-size: medium}
+.small {font-size: small}
+.top5 {margin-top: 5px}
+.top10 {margin-top: 10px}
+.bot10 {margin-bottom: 10px}
+.bot20 {margin-bottom: 20px}
+
+.w100 {width: 100%}
+
+.center {text-align: center}
+.block {display: block}
+
+.hidden {
+	display: none;
+}
+
+.floatR {
+	float: right;
+}
+code {
+	background-color: #f6f6f6;
+    margin: 2px 0 4px 0;
+    padding: 2px 4px;
+    color: #444;
+}
+
+.hand: hover {
+	cursor: pointer;
+}
+
+input.mixesdb {
+	padding: 2px;
+	border: 1px solid #ccc;
+}
+input.mixesdb-inputSelected {
+	background-color: #fc0 !important;
+	color: #000 !important;
+	font-size: 12px !important;
+}
+input.mixesdb,
+#mixesdb-TLbox {
+	border-radius: .4em !important;
+}
+#mixesdb-TLbox {
+	background-color: #fcfcfc !important;
+}
+#mixesdb-TLbox: focus {
+    outline: none;
+}
+textarea.mono, input.mono {
+	font-family: monospace;
+	font-size: 12px;
+}
+.clipboardButton {
+	margin: 3px 0 0;
+}
+.pad0 {
+	padding: 0 !important;
+}
+
+/*
+ * RBMA
+ */
+.shareWidgets-embed {
+	padding: 0;
+	margin-right: 4px;
+}
+#shareWidgets_input {
+	width: 260px;
+}
+.shareWidgets-toggleContent {margin: 0; float: right;}
+.shareWidgets-sharebar {width: inherit}
+
+/*
+ * RA
+ */
+.mixesdb-ra #header #user,
+.mixesdb-ra #user>ul: first-child>li {
+	height: 37px;
+	color: #aaa;
+}
+
+.mdb-warn {
+	background-color:#fee;
+	padding: 20px 5px;
+	color: crimson;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*
+ * Tracklist editor
+ */
+#tlEditor {
+	font-size: 13px;
+	display: block !important;
+	padding: 12px;
+	text-align: left !important;
+}
+#tlEditor-feedback {
+	margin-top: 12px;
+}
+#tlEditor-feedback ul {
+	margin-left: 0;
+	padding-left: 20px;
+}
+.fs75p #tlEditor-feedback {
+	font-size: 75%;
+}
+.plus8 #tlEditor-feedback {
+	margin-top: 0;
+}
+#tlEditor-feedback-rows {
+    color: #fff;
+    background: hsla(0, 0%, 87%, 0.7);
+    text-shadow: 1px 1px hsla(0, 0%, 39%, 0.3);
+    margin-top: -.275em;
+    padding: .2em .4em .2em .3em;
+    border-radius: .2em;
+}
