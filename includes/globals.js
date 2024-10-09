@@ -13,7 +13,7 @@ var d = $(document),
  */
 
 // log
-function log( text, debugFilter ) {
+function log( text ) {
 	console.log( debugFilter + ": " + text );
 }
 
