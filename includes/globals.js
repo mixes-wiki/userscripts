@@ -46,9 +46,7 @@ var domain = urlPath(0).replace(/.+\.(.+\.[a-z0-9]+)/gi, '$1'),
 
 // getURLParameter
 function getURLParameter(name) {
-    return decodeURIComponent((new RegExp('[?|&]'+name+'=' +
-'([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g,
-'%20'))||null;
+    return decodeURIComponent((new RegExp('[?|&]'+name+'=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
 }
 
 
