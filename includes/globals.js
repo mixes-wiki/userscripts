@@ -1,7 +1,7 @@
 /*
  * Global vars
  */
-const d = $(document),
+const d = $(document);
 const url = $(location).attr('href');
 const apiUrlTools = 'https://www.mixes.wiki/tools/api/api.php';
 const debugFilter = '[Mixes.wiki userscript]';
