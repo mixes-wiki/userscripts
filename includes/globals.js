@@ -12,7 +12,7 @@ var d = $(document),
  */
 
 // log
-function log( text ) {
+function log( text, debugFilter="[Undefined]" ) {
 	console.log( debugFilter + ": " + text );
 }
 
