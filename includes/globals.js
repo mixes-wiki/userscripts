@@ -1,5 +1,5 @@
 /*
- * Global vars
+ * Global var definitions
  */
 const d = $(document);
 const url = $(location).attr('href');
