@@ -34,6 +34,25 @@ function logFunc( functionName ) {
 
 
 /*
+ * URL funcs
+ */
+
+// urlPath
+function urlPath(n) {
+	return url.split('/')[n+2];
+}
+var domain = urlPath(0).replace(/.+\.(.+\.[a-z0-9]+)/gi, '$1'),
+	subdomain = urlPath(0);
+
+// getURLParameter
+function getURLParameter(name) {
+    return decodeURIComponent((new RegExp('[?|&]'+name+'=' +
+'([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g,
+'%20'))||null;
+}
+
+
+/*
  * Usercript helpers
  */
 
