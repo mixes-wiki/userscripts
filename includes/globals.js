@@ -53,7 +53,7 @@ function getURLParameter(name) {
 
 
 /*
- * Usercript helpers
+ * Userscript helpers
  */
 
 // loadCSS
