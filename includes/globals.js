@@ -91,6 +91,4 @@ function redirectOnUrlChange() {
 /*
  * End
  */
-loadCSS('https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/globals.css?v-1');
-
 log( "globals.js loaded" );
