@@ -1,11 +1,11 @@
 /*
  * Global vars
  */
-const d = $(document);
-const url = $(location).attr('href');
-const apiUrlTools = 'https://www.mixes.wiki/tools/api/api.php';
-const debugFilter = '[Mixes.wiki userscript]';
-const TLbox = '<div class="Mixeswiki_WebTracklistsToCopy MixesDB_WebTracklistsToCopy" style="color:#f60; font-family:monospace,sans-serif; font-size:12px; margin-top:8px"></div><hr style="color:#ddd; margin-top:8px" /><p style="margin-top:8px; color:#f60; font-weight:bold">You still need to fix this in the <a href="https://www.mixes.wiki/tools/tracklist_editor/">Tracklist Editor</a></p>';
+var d = $(document),
+	url = $(location).attr('href'),
+	apiUrlTools = 'https://www.mixes.wiki/tools/api/api.php',
+	debugFilter = '[Mixes.wiki userscript]',#
+	TLbox = '<div class="Mixeswiki_WebTracklistsToCopy MixesDB_WebTracklistsToCopy" style="color:#f60; font-family:monospace,sans-serif; font-size:12px; margin-top:8px"></div><hr style="color:#ddd; margin-top:8px" /><p style="margin-top:8px; color:#f60; font-weight:bold">You still need to fix this in the <a href="https://www.mixes.wiki/tools/tracklist_editor/">Tracklist Editor</a></p>';
 
 
 /*
@@ -13,7 +13,7 @@ const TLbox = '<div class="Mixeswiki_WebTracklistsToCopy MixesDB_WebTracklistsTo
  */
 
 // log
-function log( text ) {
+function log( text, debugFilter ) {
 	console.log( debugFilter + ": " + text );
 }
 
