@@ -1,3 +1,5 @@
+console.log( "globals.js loaded." );
+
 /*
  * Global vars
  */
