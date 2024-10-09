@@ -89,6 +89,6 @@ function redirectOnUrlChange() {
 /*
  * End
  */
-loadCSS('https://www.mixes.wiki/tools/userscripts/globals.css?70');
+loadCSS('https://raw.githubusercontent.com/Subfader/userscripts/refs/heads/main/includes/globals.css?v-1');
 
-log( "globals.js loaded");
+log( "globals.js loaded" );
