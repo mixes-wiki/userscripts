@@ -13,7 +13,7 @@ const TLbox = '<div class="Mixeswiki_WebTracklistsToCopy MixesDB_WebTracklistsTo
  */
 
 // log
-function log( text, debugFilter ) {
+function log( text ) {
 	console.log( debugFilter + ": " + text );
 }
 
