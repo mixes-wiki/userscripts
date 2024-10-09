@@ -1,5 +1,3 @@
-console.log( "globals.js loaded." );
-
 /*
  * Global vars
  */
@@ -33,6 +31,15 @@ function logFunc( functionName ) {
 	log( "\n"+ seperator +"\n# "+ functionName +"()\n"+ seperator );
 }
 
+/*
+ * Usercript helpers
+ */
+
+// loadCSS
+function loadCSS(u) {
+	$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', u) );
+}
+
 
 /*
  * Create elements
@@ -47,3 +54,41 @@ function create_input( text, className ) {
 function create_note( text, className ) {
 	return '<span class="mixeswiki-element note '+ className +'">'+text+'</span>';
 }
+
+
+/*
+ * redirect on every url change event listener
+ */
+function redirectOnUrlChange() {
+	// event listener
+	var pushState = history.pushState;
+	var replaceState = history.replaceState;
+	history.pushState = function() {
+		pushState.apply(history, arguments);
+		window.dispatchEvent(new Event('pushstate'));
+		window.dispatchEvent(new Event('locationchange'));
+	};
+	history.replaceState = function() {
+		replaceState.apply(history, arguments);
+		window.dispatchEvent(new Event('replacestate'));
+		window.dispatchEvent(new Event('locationchange'));
+	};
+	window.addEventListener('popstate', function() {
+		window.dispatchEvent(new Event('locationchange'))
+	});
+	
+	// redirect
+	window.addEventListener('locationchange', function(){
+		var newUrl = location.href;
+		console.log('onlocationchange event occurred > redirecting to ' + newUrl );
+		window.location.replace( newUrl );
+	});
+}
+
+
+/*
+ * End
+ */
+loadCSS('https://www.mixes.wiki/tools/userscripts/globals.css?70');
+
+log( "globals.js loaded");
