@@ -4,7 +4,8 @@
 var d = $(document),
 	url = $(location).attr('href'),
 	apiUrlTools = 'https://www.mixes.wiki/tools/api/api.php',
-    TLbox = '<div class="Mixeswiki_WebTracklistsToCopy MixesDB_WebTracklistsToCopy" style="color:#f60; font-family:monospace,sans-serif; font-size:12px; margin-top:8px"></div><hr style="color:#ddd; margin-top:8px" /><p style="margin-top:8px; color:#f60; font-weight:bold">You still need to fix this in the <a href="https://www.mixes.wiki/tools/tracklist_editor/">Tracklist Editor</a></p>';
+	debugFilter = "[Mixes.wiki userscript]",
+	TLbox = '<div class="Mixeswiki_WebTracklistsToCopy MixesDB_WebTracklistsToCopy" style="color:#f60; font-family:monospace,sans-serif; font-size:12px; margin-top:8px"></div><hr style="color:#ddd; margin-top:8px" /><p style="margin-top:8px; color:#f60; font-weight:bold">You still need to fix this in the <a href="https://www.mixes.wiki/tools/tracklist_editor/">Tracklist Editor</a></p>';
 
 
 /*
@@ -30,6 +31,7 @@ function logFunc( functionName ) {
 	var seperator = "####################################";
 	log( "\n"+ seperator +"\n# "+ functionName +"()\n"+ seperator );
 }
+
 
 /*
  * Usercript helpers
@@ -80,7 +82,7 @@ function redirectOnUrlChange() {
 	// redirect
 	window.addEventListener('locationchange', function(){
 		var newUrl = location.href;
-		console.log('onlocationchange event occurred > redirecting to ' + newUrl );
+		log( 'onlocationchange event occurred > redirecting to ' + newUrl );
 		window.location.replace( newUrl );
 	});
 }
