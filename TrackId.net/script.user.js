@@ -25,10 +25,12 @@ const script_css = GM_getResourceText("SCRIPT_CSS"); GM_addStyle(script_css);
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * 
  * ToDos
  * Remove all mixesdb and mdb names
  * Convert MW logo to smaller base64 img
  * "Planned features" on Help page
+ * 
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 
