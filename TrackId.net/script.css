@@ -153,15 +153,15 @@ a:hover {
 /*
  * mdbSearchLink
  */
-#mdbSearchLink-detailPage {
+#mwSearchLink-detailPage {
 	padding-left: 13px;
 }
-.mdbSearchLink-list img {
+.mwSearchLink-list img {
 	margin-top: 6px !important;
 }
-.mdbSearchLink-list.active,
-.mdbSearchLink-list.visited,
-.mdbSearchLink-list:visited  {
+.mwSearchLink-list.active,
+.mwSearchLink-list.visited,
+.mwSearchLink-list:visited  {
 	opacity: .38;
 }
 
