@@ -59,6 +59,17 @@ function loadCSS(u) {
 	$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', u) );
 }
 
+// durToSec
+function durToSec( dur ) {
+    var hms = dur.trim();   // your input string
+    var a = hms.split(':'); // split it at the colons
+
+    // minutes are worth 60 seconds. Hours are worth 60 minutes.
+    var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
+
+    return seconds;
+}
+
 
 /*
  * Create elements
