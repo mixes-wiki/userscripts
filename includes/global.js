@@ -76,8 +76,8 @@ function durToSec( dur ) {
  */
 
 // create_input
-function create_input( text, className ) {
-	return '<input class="mixeswiki-element input '+ className +'" value="'+text+'" />';
+function create_input( text, className, name ) {
+	return '<input class="mixeswiki-element input '+ className +'" name="'+id+'" value="'+text+'" />';
 }
 
 // create_note
