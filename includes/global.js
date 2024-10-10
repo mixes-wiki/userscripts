@@ -85,6 +85,11 @@ function create_note( text, className ) {
 	return '<span class="mixeswiki-element note '+ className +'">'+text+'</span>';
 }
 
+// create_button
+function create_button( text, className ) {
+	return '<button class="mixeswiki-element button '+ className +'">'+text+'</button>';
+}
+
 
 /*
  * Tracklist funcs
