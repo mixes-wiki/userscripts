@@ -87,6 +87,35 @@ function create_note( text, className ) {
 
 
 /*
+ * API funcs
+ */
+
+// apiTracklist
+// allow site domain in Apache
+// allow mixesdb scxripts on site
+function apiTracklist( tl, type, genType ) {
+	var data = { query: "tracklistEditor",
+				 type: type,
+				 genType: genType,
+				 // Mixcloud bug when unicode_repl.js is included
+				 //text: replaceUnicode( tl )
+				 text: tl
+			   };
+
+	var jqXHR = $.ajax({
+		type: "POST",
+		url: apiUrlTools,
+		data: data,
+		async: false
+	});
+
+	var res = JSON.parse(jqXHR.responseText);
+
+	return res;
+}
+
+
+/*
  * redirect on every url change event listener
  */
 function redirectOnUrlChange() {
