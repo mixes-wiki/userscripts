@@ -123,29 +123,7 @@ jQuery.fn.justText = function() {
             .text();
 };
 
-// apiTracklist
-// allow site domain in Apache
-// allow mixesdb scxripts on site
-function apiTracklist( tl, type, genType ) {
-	var data = { query: "tracklistEditor",
-				 type: type,
-				 genType: genType,
-				 // Mixcloud bug when unicode_repl.js is included
-				 //text: replaceUnicode( tl )
-				 text: tl
-			   };
 
-	var jqXHR = $.ajax({
-		type: "POST",
-		url: apiUrlTools,
-		data: data,
-		async: false
-	});
-
-	var res = JSON.parse(jqXHR.responseText);
-
-	return res;
-}
 
 $("input.selectOnClick").click(function(){
 	$(this).focus();
