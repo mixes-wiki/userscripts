@@ -87,8 +87,60 @@ function create_note( text, className ) {
 
 
 /*
- * API funcs
+ * Tracklist funcs
  */
+
+// fixTLbox
+function fixTLbox( feedback ) {
+	var tl = $("#mixesdb-TLbox");
+	tl.html( tl.html().replace(/&(nbsp|thinsp);/g, ' ') );
+	var text = "TEMPBEGINNING" + tl.val(),
+		textFix = text.replace(/TEMPBEGINNING(\n)?/g,"")
+	                  .replace(/\n$/g,"")
+					  .replace(/( )+/g, " ");
+	tl.val(textFix);
+	var text = tl.val(),
+		lines = text.split("\n"),
+		count = lines.length;
+	tl.attr('rows', count);
+
+	if( domain != "beatport.com" ) autosize(tl); // beatport.com buggy in FF
+
+	if( feedback != null && feedback.text ) {
+		var tle = $("#tlEditor");
+		tle.addClass("bot10");
+		tl.attr( "id", "mixesdb-TLbox tlEditor-textarea" );
+
+		if( feedback.warnings > 0 ) {
+			tle.addClass( "tlEditor-feedback-warning" );
+		} else {
+			if( feedback.hints > 0 ) {
+				tle.addClass( "tlEditor-feedback-hint" );
+			} else {
+				if( feedback.status == "incomplete" ) {
+					tle.addClass( "tlEditor-feedback-hint" );
+				} else {
+					tle.addClass( "tlEditor-feedback-complete" );
+				}
+			}
+		}
+		tl.after( feedback.text );
+	}
+	loadCSS( '//www.mixes.wiki/tools/userscripts/tracklist_editor_copy.css' );
+		
+	tl.show().select().addClass("fixed");
+
+
+	/* clipboard.js
+	var clipboardButton = '<button class="clipboardButton floatL bold green" data-clipboard-target="#mixesdb-TLbox">Copy to clipboard</button>';
+	tl.after( clipboardButton );
+
+	var clipboard = new Clipboard('.clipboardButton');
+	clipboard.on('success', function() {
+	    $('.clipboardButton').removeClass('green').addClass('grey');
+	});
+	*/
+}
 
 // apiTracklist
 // allow site domain in Apache
