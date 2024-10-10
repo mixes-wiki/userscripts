@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TrackId.net (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.10.5
+// @version      2024.10.10.6
 // @description  Change the look and behaviour of certain DJ culture related websites to help contributing to Mixes.wiki, e.g. add copy-paste ready tracklists in wiki syntax.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1261652394799005858
@@ -11,14 +11,17 @@
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/waitForKeyElements.js
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/youtube_funcs.js
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/global.js?v-TrackId.net_24
-// @resource     IMPORTED_CSS https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/global.css?v-TrackId.net_12
-// @resource     IMPORTED_CSS https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/TrackId.net/script.css?v-8
+// @resource     GLOBAL_CSS https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/global.css?v-TrackId.net_12
+// @resource     SCRIPT_CSS https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/TrackId.net/script.css?v-8
 // @include      http*trackid.net*
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
 // @noframes
 // @run-at       document-end
 // ==/UserScript==
+
+const global_css = GM_getResourceText("GLOBAL_CSS"); GM_addStyle(global_css);
+const script_css = GM_getResourceText("SCRIPT_CSS"); GM_addStyle(script_css);
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
