@@ -10,8 +10,8 @@
 // @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/jquery-3.7.1.min.js
 // @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/waitForKeyElements.js
 // @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/youtube_funcs.js
-// @require      https://raw.githubusercontent.com/Subfader/userscripts/refs/heads/main/includes/global.js?v-TrackId.net_15
-// @resource     IMPORTED_CSS https://raw.githubusercontent.com/Subfader/userscripts/refs/heads/main/includes/global.css?v-TrackId.net_12
+// @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/global.js?v-TrackId.net_15
+// @resource     IMPORTED_CSS https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/global.css?v-TrackId.net_12
 // @include      http*trackid.net*
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
