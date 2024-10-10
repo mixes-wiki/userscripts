@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         Mixes.wiki userscripts helper (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.10.1
+// @version      2024.10.10.2
 // @description  Change the look and behaviour of the mixes.wiki website to enable feature usable by other website userscripts provided by Mixes.wiki.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL
-// @updateURL    https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/Mixes.wiki_userscripts_helper/script.user.js
-// @downloadRL   https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/Mixes.wiki_userscripts_helper/script.user.js
+// @updateURL    https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/Mixes.wiki_Userscripts_Helper/script.user.js
+// @downloadRL   https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/Mixes.wiki_Userscripts_Helper/script.user.js
 // @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/jquery-3.7.1.min.js
 // @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/waitForKeyElements.js
 // @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/global.js?v-Mixes.wiki_1
