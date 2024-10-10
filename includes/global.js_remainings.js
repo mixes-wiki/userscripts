@@ -114,17 +114,6 @@ function secondsToHMS(s) {
 	return H+(m < 10 ? '0'+m : m)+":"+(s < 10 ? '0'+s : s);
 }
 
-// durToSec
-function durToSec( dur ) {
-    var hms = dur.trim();   // your input string
-    var a = hms.split(':'); // split it at the colons
-
-    // minutes are worth 60 seconds. Hours are worth 60 minutes.
-    var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
-
-    return seconds;
-}
-
 // justText
 jQuery.fn.justText = function() {
     return $(this).clone()
