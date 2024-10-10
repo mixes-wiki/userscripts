@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mixes.wiki Userscripts Helper (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.10.6.1
+// @version      2024.10.10.7.0
 // @description  Change the look and behaviour of the Mixes.wiki website to enable feature usable by other Mixes.wiki userscripts.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1293952534268084234
@@ -49,10 +49,17 @@ log( "isMainPage: " + isMainPage );
 if( actionView && isNs0 && !isMainPage ) {
     log( "Criteria for mix page matched." );
 
-    // on click add request page url for the first visible player
+    // On click add request page url for the first visible player
     $("#pageIconPlayers.trackIdNet").click(function(){
-        var linkIcon = $("#pageIcons a.trackIdNet"),
-            urlSearch = linkIcon.attr("href").replace(/ /,"%20"),
+        var linkIcon = $("#pageIcons a.trackIdNet");
+
+        // Prevent URLs adding up after 1st click
+        // otherwise the URLs add up and on 2nd click more than 2 tabs open
+        var hrefOrig = linkIcon.attr("data-hreforig");
+        linkIcon.attr("href", hrefOrig);
+
+        // On click
+        var urlSearch = linkIcon.attr("href").replace(/ /,"%20"),
             requestPlayerUrl = $(".playerWrapper:visible[data-playerurl]").first().attr("data-playerurl"); // first visible player
         log( "urlSearch (before): " + urlSearch );
 
@@ -61,7 +68,7 @@ if( actionView && isNs0 && !isMainPage ) {
             var urlRequest = "https://trackid.net/submitrequest?requestUrl="+requestPlayerUrl,
                 multiUrl = "https://www.mixes.wiki/tools/open/?urls="+encodeURIComponent(urlSearch)+","+encodeURIComponent( urlRequest );
 
-            linkIcon.attr("href", multiUrl);
+            linkIcon.attr("href", multiUrl).attr("data-hreforig", urlSearch);
 
             log( "URL changed to: " + multiUrl );
         } else {
