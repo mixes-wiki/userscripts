@@ -11,7 +11,7 @@
 // @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/waitForKeyElements.js
 // @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/youtube_funcs.js
 // @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/global.js?v-TrackId.net_15
-// @resource     IMPORTED_CSS https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/global.css?v-TrackId.net_12
+// @resource     IMPORTED_CSS https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/global.css?v-TrackId.net_13
 // @include      http*trackid.net*
 // @grant        GM_getResourceText
 // @grant        GM_addStyle

@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name         Mixes.wiki userscripts helper (by Mixes.wiki)
+// @name         Mixes.wiki Userscripts Helper (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.10.2
-// @description  Change the look and behaviour of the mixes.wiki website to enable feature usable by other website userscripts provided by Mixes.wiki.
+// @version      2024.10.10.4
+// @description  Change the look and behaviour of the mixes.wiki website to enable feature usable by other Mixes.wiki userscripts.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL
-// @updateURL    https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/Mixes.wiki_Userscripts_Helper/script.user.js
-// @downloadRL   https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/Mixes.wiki_Userscripts_Helper/script.user.js
+// @updateURL    https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/Mixes.wiki_userscripts_helper/script.user.js
+// @downloadRL   https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/Mixes.wiki_userscripts_helper/script.user.js
 // @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/jquery-3.7.1.min.js
 // @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/waitForKeyElements.js
 // @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/global.js?v-Mixes.wiki_1
@@ -27,7 +27,7 @@
  */
 
 /*
- * On mix pages, make the TrackId.net icon open 2 tabs:
+ * On mix pages, make the page icon for TrackId.net open 2 tabs:
  * 1st tab: Search the mix page title (as by default)
  * 2nd tab: If the mix page contains a player: Open the "Submit Request" page on TackId.net and insert the URL of the first player.
  * Inserting the player URL in the form requires the userscript "TrackId.net (by Mixes.wiki)".
