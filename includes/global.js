@@ -76,13 +76,18 @@ function durToSec( dur ) {
  */
 
 // create_input
-function create_input( text, className ) {
-	return '<input class="mixeswiki-element input '+ className +'" value="'+text+'" />';
+function create_input( text, className, id ) {
+	return '<input class="mixeswiki-element input '+ className +'" id="'+id+'" name="'+id+'" value="'+text+'" />';
 }
 
 // create_note
 function create_note( text, className ) {
 	return '<span class="mixeswiki-element note '+ className +'">'+text+'</span>';
+}
+
+// create_button
+function create_button( text, className, type ) {
+	return '<button type="'+type+'" class="mixeswiki-element button '+ className +'">'+text+'</button>';
 }
 
 
