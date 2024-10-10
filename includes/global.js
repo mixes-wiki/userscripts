@@ -86,8 +86,8 @@ function create_note( text, className ) {
 }
 
 // create_button
-function create_button( text, className ) {
-	return '<button class="mixeswiki-element button '+ className +'">'+text+'</button>';
+function create_button( text, className, type ) {
+	return '<button type="'+type+'" class="mixeswiki-element button '+ className +'">'+text+'</button>';
 }
 
 
