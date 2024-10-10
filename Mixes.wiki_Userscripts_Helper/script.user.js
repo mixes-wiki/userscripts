@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mixes.wiki Userscripts Helper (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.10.5.1
+// @version      2024.10.10.5.2
 // @description  Change the look and behaviour of the Mixes.wiki website to enable feature usable by other Mixes.wiki userscripts.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1293952534268084234
@@ -17,14 +17,11 @@
 // ==/UserScript==
 
 
-/* ToDos
- * Add @supportURL to discord channel "Mixes.wiki userscripts"
- */
-
-
-/*
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * 
  * TrackId.net support
- */
+ * 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 /*
  * Quicker "Submit Request"
