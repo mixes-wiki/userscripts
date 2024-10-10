@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TrackId.net (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.10.6
+// @version      2024.10.10.6.1
 // @description  Change the look and behaviour of certain DJ culture related websites to help contributing to Mixes.wiki, e.g. add copy-paste ready tracklists in wiki syntax.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1261652394799005858
@@ -25,10 +25,12 @@ const script_css = GM_getResourceText("SCRIPT_CSS"); GM_addStyle(script_css);
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * 
  * ToDos
  * Remove all mixesdb and mdb names
  * Convert MW logo to smaller base64 img
- * "Upcoming features" on Help page
+ * "Planned features" on Help page
+ * 
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 
