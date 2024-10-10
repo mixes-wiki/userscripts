@@ -10,12 +10,12 @@
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/jquery-3.7.1.min.js
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/waitForKeyElements.js
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/youtube_funcs.js
-// @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/global.js?v-TrackId.net_24
-// @resource     GLOBAL_CSS https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/global.css?v-TrackId.net_12
-// @resource     SCRIPT_CSS https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/TrackId.net/script.css?v-8
-// @include      http*trackid.net*
+// @require      https://cdn.jsdelivr.net/gh/Subfader/userscripts@latest/includes/global.js?v-TrackId.net_30
+// @resource     GLOBAL_CSS https://cdn.rawgit.com/Subfader/userscripts/refs/heads/main/includes/global.css?v-TrackId.net_15
+// @resource     SCRIPT_CSS https://cdn.rawgit.com/Subfader/userscripts/refs/heads/main/TrackId.net/script.css?v-TrackId.net_10
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
+// @include      http*trackid.net*
 // @noframes
 // @run-at       document-end
 // ==/UserScript==
@@ -443,10 +443,12 @@ $(".MuiDataGrid-virtualScrollerRenderZone .MuiDataGrid-cell:not(.processed)").on
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
  * Submit request URLs
  * https://trackid.net/submitrequest
- * https://trackid.net/submitrequest?url=https://soundcloud.com/djrog/latin-vibes
- * Passing url pramater rquires the userscript "Mixes.wiki userscripts helper (by Mixes.wiki)"
+ * https://trackid.net/submitrequest?url=https://soundcloud.com/djrog/latin-vibes&keywords=foo%20bar
+ * Passing URL pramater requires the userscript "Mixes.wiki Userscripts Helper (by Mixes.wiki)"
+ *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 function on_submitrequest() {
@@ -477,15 +479,19 @@ function on_submitrequest() {
 
     // if url was passed as parameter
     var requestUrl = getURLParameter( "requestUrl" ),
-        requestUrl_domain = new URL( requestUrl ).hostname.replace("www.","");
+        requestUrl_domain = new URL( requestUrl ).hostname.replace("www.",""),
+        keywords = getURLParameter("keywords");
+
     logVar( "requestUrl", requestUrl );
     logVar( "requestUrl_domain", requestUrl_domain );
+    logVar( "keywords", keywords );
 
+    // Insert the requestUrl to the submit input
     if( requestUrl !== "" ) {
         // add URL to input and try to submit
-        waitForKeyElements( ".MuiGrid-grid-xs-12 .MuiFormControl-root input[type=text].MuiInputBase-input", submitrequest_input_wait);
-        function submitrequest_input_wait(jNode) {
-            log( "submitrequest_input_wait()" );
+        waitForKeyElements( ".MuiGrid-grid-xs-12 .MuiFormControl-root input[type=text].MuiInputBase-input", submitRequest_input_wait);
+        function submitRequest_input_wait(jNode) {
+            logFunc( "submitRequest_input_wait" );
 
             // Submit notice cos we cannot just trigger a click on the the "VALIDATE" button
             // For YouTube URLs it doesn't allow a blank after the URL...
@@ -513,6 +519,21 @@ function on_submitrequest() {
                 //jNode.trigger( e );
                 jNode.closest(".MuiGrid-container").after( submitNote );
             }, timeoutDelay);
+        }
+    }
+
+    // Add keywords to search input
+    if( keywords !== "" ) {
+        waitForKeyElements( "#search-box", submitRequest_searchInput_wait);
+        function submitRequest_searchInput_wait( jNode ) {
+            logFunc( "submitRequest_searchInput_wait" );
+
+            var newSearch = '<form action="https://trackid.net/audiostreams" method="GET">';
+                newSearch += create_button( "Search", "replaced-search-button inline", "submit" );
+                newSearch += create_input( keywords, "replaced-search-input inline left-10", "keywords" );
+                newSearch += '</form>';
+
+            jNode.closest(".header-mid.MuiBox-root").replaceWith( newSearch );
         }
     }
 }
