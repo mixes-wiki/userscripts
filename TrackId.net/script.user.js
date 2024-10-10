@@ -1,58 +1,30 @@
 // ==UserScript==
 // @name         TrackId.net (by Mixes.wiki)
-// @author       Mixes.wiki
-// @version      2024.07.19.1
-// @description  Make DJ Mix related wesbites better and make online tracklists parsable for the MixesDB Tracklist Editor
-// @homepageURL  https://www.mixes.wiki/w/Help:Pimp_scripts
-// @supportURL   https://www.mixes.wiki/w/MixesDB:Forum/Pimp_scripts
-// @updateURL    https://www.mixes.wiki/tools/userscripts/TrackId.net.user.js
-// @downloadRL   https://www.mixes.wiki/tools/userscripts/TrackId.net.user.js
+// @author       User:Martin@Mixes.wiki (Subfader@GitHub)
+// @version      2024.10.10.2
+// @description  Change the look and behaviour of certain DJ culture related websites to help contributing to Mixes.wiki, e.g. add copy-paste ready tracklists in wiki syntax.
+// @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
+// @supportURL   https://discord.com/channels/1258107262833262603/1261652394799005858
+// @updateURL    https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/TrackId.net/script.user.js
+// @downloadRL   https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/TrackId.net/script.user.js
+// @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/jquery-3.7.1.min.js
+// @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/waitForKeyElements.js
+// @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/youtube_funcs.js
+// @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/global.js?v-TrackId.net_15
+// @resource     IMPORTED_CSS https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/global.css?v-TrackId.net_12
 // @include      http*trackid.net*
+// @grant        GM_getResourceText
+// @grant        GM_addStyle
 // @noframes
-// @require      https://www.mixes.wiki/scripts/jquery/jquery-1.7.min.js
-// @require      https://www.mixes.wiki/tools/userscripts/globals.js?trackidnet_2
-// @require      https://www.mixes.wiki/tools/userscripts/youtube_funcs.js
-// @require      https://www.mixes.wiki/scripts/waitForKeyElements/waitForKeyElements.js
 // @run-at       document-end
 // ==/UserScript==
-
-/*
- * Move to gloabal.js
- */
-// log functions
-function log( text ) {
-    console.log( debugFilter + ": " + text );
-}
-function logVar( variable, string ) {
-    if( string !== null ) {
-        log( variable + ": " + string );
-    } else {
-        log( variable + " empty" );
-    }
-}
-function logFunc( functionName ) {
-    var seperator = "####################################";
-    log( "\n"+ seperator +"\n# "+ functionName +"()\n"+ seperator );
-}
-
-// create_input
-function create_input( text, className ) {
-    return '<input class="mixeswiki-element input '+ className +'" value="'+text+'" />';
-}
-
-// create_note
-function create_note( text, className ) {
-    return '<span class="mixeswiki-element note '+ className +'">'+text+'</span>';
-}
-
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  *
  * Basics
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-var debugFilter = "[MW_TrackId.net]",
-    timeoutDelay = 600;
+var timeoutDelay = 600;
 
 // select elements
 waitForKeyElements(".mixeswiki-element.select", mixeswikiElement_select);
@@ -88,10 +60,12 @@ $(document).ready(function(){
     }
 });
 
+
 /*
  * Submit request URLs
  * https://trackid.net/submitrequest
  * https://trackid.net/submitrequest?url=https://soundcloud.com/djrog/latin-vibes
+ * Passing url pramater rquires the userscript "Mixes.wiki userscripts helper (by Mixes.wiki)"
  */
 function on_submitrequest() {
     logFunc( "on_submitrequest" );
@@ -125,7 +99,7 @@ function on_submitrequest() {
     logVar( "requestUrl", requestUrl );
     logVar( "requestUrl_domain", requestUrl_domain );
 
-    if( requestUrl ) {
+    if( requestUrl !== "" ) {
         // add URL to input and try to submit
         waitForKeyElements( ".MuiGrid-grid-xs-12 .MuiFormControl-root input[type=text].MuiInputBase-input", submitrequest_input_wait);
         function submitrequest_input_wait(jNode) {
@@ -133,7 +107,7 @@ function on_submitrequest() {
 
             // Submit notice cos we cannot just trigger a click on the the "VALIDATE" button
             // For YouTube URLs it doesn't allow a blank after the URL...
-            var note_standard = create_note( "Press the SPACEBAR and ENTER" ),
+            var note_standard = create_note( "Press the SPACEBAR and ENTER to validate" ),
                 note_YouTube  = create_note( "Press the SPACEBAR, BACKSPACE and ENTER" );
 
             switch( requestUrl_domain ) {
