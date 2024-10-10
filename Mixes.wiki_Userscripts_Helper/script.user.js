@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mixes.wiki Userscripts Helper (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.10.6
+// @version      2024.10.10.6.1
 // @description  Change the look and behaviour of the Mixes.wiki website to enable feature usable by other Mixes.wiki userscripts.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1293952534268084234
@@ -15,6 +15,14 @@
 // @grant        unsafeWindow
 // @run-at       document-end
 // ==/UserScript==
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ * ToDos
+ * Rewrite to not require jQuery
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
