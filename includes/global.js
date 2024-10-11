@@ -55,8 +55,9 @@ function getURLParameter(name) {
  */
 
 // loadCSS
-function loadCSS(u) {
-	$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', u) );
+function loadCSS( url, typeVal ) {
+	var type = ( typeVal == "" ? "text/css" : "text" ); // allow type="text" for GitHub raw URLs
+	$('head').append( $('<link rel="stylesheet" type="'+type+'" />').attr('href', url) );
 }
 
 // durToSec
