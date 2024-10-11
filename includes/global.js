@@ -54,9 +54,29 @@ function getURLParameter(name) {
  * Userscript helpers
  */
 
-// loadCSS
-function loadCSS( url ) {
-	$('head').append( $('<link rel="stylesheet" type="text/css" href="'+url+'" />');
+/* 
+ * loadRawCss
+ * GitHub delivers either the wrong MIME type for CSS fiels, so they can't be parsed in strict_mode
+ * or deliveres outdated caches files:
+ * https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/TrackId.net/script.css   < Up to date, but Wrong MIME type. Wonn't be parsed in strict_mode
+ * https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/TrackId.net/script.css              < Redirects to:
+ * https://cdn.jsdelivr.net/gh/mixes-wiki/userscripts@refs/heads/main/TrackId.net/script.css         < Outdated for 2 hours
+ * https://cdn.jsdelivr.net/gh/mixes-wiki/userscripts@latest/TrackId.net/script.css                  < same
+ * https://cdn.jsdelivr.net/gh/mixes-wiki/userscripts/TrackId.net/script.css                         < same
+ * 
+ * Hence the only way to receive the latest commited version and have it parsed
+ * is by loading the content of the raw.githubusercontent.com CSS file
+ * and embed the CSS text in a scripttag
+ */
+function loadRawCss( urlVar ) {
+    $.ajax({
+        url: urlVar,
+        dataType: "text",
+        success: function(cssText) {
+            // cssText will be a string containing the text of the file
+            $('head').append( '<style>'+cssText+'</style>' );
+        }
+    });
 }
 
 // durToSec
