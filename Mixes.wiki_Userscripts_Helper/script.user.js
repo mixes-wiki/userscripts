@@ -9,7 +9,7 @@
 // @downloadRL   https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/Mixes.wiki_userscripts_helper/script.user.js
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/jquery-3.7.1.min.js
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/waitForKeyElements.js
-// @require      https://cdn.jsdelivr.net/gh/Subfader/userscripts@latest/includes/global.js?v-Mixes.wiki_1
+// @require      https://cdn.jsdelivr.net/gh/mixes-wiki/userscripts@latest/includes/global.js?v-Mixes.wiki_1
 // @match        https://www.mixes.wiki/*
 // @noframes
 // @grant        unsafeWindow
