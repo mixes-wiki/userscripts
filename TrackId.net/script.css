@@ -271,9 +271,9 @@ a:hover {
 /*
  * Replaced search
  */
-#replaced-search {
-	min-width: calc( 94vw - 500px );
-}
 #replaced-search .mixeswiki-element {
 	min-height: 28px;
+}
+#replaced-search .replaced-search-input {
+	min-width: calc( 94vw - 500px );
 }
