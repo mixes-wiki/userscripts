@@ -10,9 +10,9 @@
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/jquery-3.7.1.min.js
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/waitForKeyElements.js
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/youtube_funcs.js
-// @require      https://cdn.jsdelivr.net/gh/Subfader/userscripts/includes/global.js?v-TrackId.net_30
-// @resource     GLOBAL_CSS https://cdn.jsdelivr.net/gh/Subfader/userscripts/includes/global.css?v-TrackId.net_19
-// @resource     SCRIPT_CSS https://cdn.jsdelivr.net/gh/Subfader/userscripts/TrackId.net/script.css?v-TrackId.net_11
+// @require      https://cdn.jsdelivr.net/gh/mixes-wiki/userscripts/includes/global.js?v-TrackId.net_30
+// @resource     GLOBAL_CSS https://cdn.jsdelivr.net/gh/mixes-wiki/userscripts/includes/global.css?v-TrackId.net_19
+// @resource     SCRIPT_CSS https://cdn.jsdelivr.net/gh/mixes-wiki/userscripts/TrackId.net/script.css?v-TrackId.net_11
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
 // @include      http*trackid.net*
@@ -25,12 +25,12 @@ const script_css = GM_getResourceText("SCRIPT_CSS"); GM_addStyle(script_css);
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * 
+ *
  * ToDos
  * Remove all mixesdb and mdb names
  * Convert MW logo to smaller base64 img
  * "Planned features" on Help page
- * 
+ *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 
