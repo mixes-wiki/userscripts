@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TrackId.net (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.10.7.0
+// @version      2024.10.11.1
 // @description  Change the look and behaviour of certain DJ culture related websites to help contributing to Mixes.wiki, e.g. add copy-paste ready tracklists in wiki syntax.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1261652394799005858
@@ -10,9 +10,7 @@
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/jquery-3.7.1.min.js
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/waitForKeyElements.js
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/youtube_funcs.js
-// @require      https://cdn.jsdelivr.net/gh/mixes-wiki/userscripts/includes/global.js?v-TrackId.net_30
-// @resource     GLOBAL_CSS https://cdn.jsdelivr.net/gh/mixes-wiki/userscripts/includes/global.css?v-TrackId.net_19
-// @resource     SCRIPT_CSS https://cdn.jsdelivr.net/gh/mixes-wiki/userscripts/TrackId.net/script.css?v-TrackId.net_11
+// @require      https://cdn.jsdelivr.net/gh/mixes-wiki/userscripts@latest/includes/global.js?v-TrackId.net_30
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
 // @include      http*trackid.net*
@@ -20,8 +18,8 @@
 // @run-at       document-end
 // ==/UserScript==
 
-const global_css = GM_getResourceText("GLOBAL_CSS"); GM_addStyle(global_css);
-const script_css = GM_getResourceText("SCRIPT_CSS"); GM_addStyle(script_css);
+loadCSS("https://cdn.jsdelivr.net/gh/mixes-wiki/userscripts@latest/includes/global.css");
+loadCSS("https://cdn.jsdelivr.net/gh/mixes-wiki/userscripts@latest/TrackId.net/script.css?0");
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -528,7 +526,7 @@ function on_submitrequest() {
         function submitRequest_searchInput_wait( jNode ) {
             logFunc( "submitRequest_searchInput_wait" );
 
-            var newSearch = '<form action="https://trackid.net/audiostreams" method="GET">';
+            var newSearch = '<form id="replaced-search" action="https://trackid.net/audiostreams" method="GET">';
                 newSearch += create_button( "Search", "replaced-search-button inline", "submit" );
                 newSearch += "&nbsp;&nbsp;";
                 newSearch += create_input( keywords, "replaced-search-input inline", "keywords" );

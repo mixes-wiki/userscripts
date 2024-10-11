@@ -12,7 +12,6 @@
 .mixeswiki-element {
 	margin: 1rem 0;
 	padding: .25rem .5rem;
-	min-height: 28px;
 }
 .mixeswiki-element.input:not(.inline) {
 	display: block;

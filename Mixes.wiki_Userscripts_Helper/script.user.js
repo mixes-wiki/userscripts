@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mixes.wiki Userscripts Helper (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.10.9.0
+// @version      2024.10.11.1
 // @description  Change the look and behaviour of the Mixes.wiki website to enable feature usable by other Mixes.wiki userscripts.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1293952534268084234
@@ -20,6 +20,7 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  *
  * ToDos
+ * Only URLs that are supported by TrackId.net: SoundCloud, Mixcloud, YouTube, hearthis.at
  * Rewrite to not require jQuery
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
