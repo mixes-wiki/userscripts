@@ -56,7 +56,7 @@ function getURLParameter(name) {
 
 // loadCSS
 function loadCSS( url ) {
-	$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', url) );
+	$('head').append( $('<link rel="stylesheet" type="text/css" href="'+url+'" />');
 }
 
 // durToSec
