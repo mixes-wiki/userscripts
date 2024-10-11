@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TrackId.net (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.11.1
+// @version      2024.10.11.2
 // @description  Change the look and behaviour of certain DJ culture related websites to help contributing to Mixes.wiki, e.g. add copy-paste ready tracklists in wiki syntax.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1261652394799005858
@@ -10,16 +10,14 @@
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/jquery-3.7.1.min.js
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/waitForKeyElements.js
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/youtube_funcs.js
-// @require      https://cdn.jsdelivr.net/gh/mixes-wiki/userscripts@latest/includes/global.js?v-TrackId.net_30
-// @grant        GM_getResourceText
-// @grant        GM_addStyle
+// @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/global.js?v-TrackId.net_31
 // @include      http*trackid.net*
 // @noframes
 // @run-at       document-end
 // ==/UserScript==
 
-loadCSS("https://cdn.jsdelivr.net/gh/mixes-wiki/userscripts@latest/includes/global.css");
-loadCSS("https://cdn.jsdelivr.net/gh/mixes-wiki/userscripts@latest/TrackId.net/script.css?0");
+loadRawCss("https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/global.css");
+loadRawCss("https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/TrackId.net/script.css");
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
