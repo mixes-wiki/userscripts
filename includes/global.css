@@ -1,3 +1,29 @@
+/*
+ * Basics
+ */
 .left-10 {
     margin-left: 10px !important;
+}
+
+
+/*
+ * Elements
+ */
+.mixeswiki-element {
+	margin: 1rem 0;
+	padding: .25rem .5rem;
+}
+.mixeswiki-element.input:not(.inline) {
+	display: block;
+	width: 100%;
+}
+.mixeswiki-element.input {
+	padding: .25rem .5rem;
+	font-family: monospace;
+	font-size: 12px;
+	border: 2px solid #fc6;
+}
+.mixeswiki-element.note {
+	background-color: #eee;
+	color: #f60;
 }
