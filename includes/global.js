@@ -155,20 +155,9 @@ function fixTLbox( feedback ) {
 		}
 		tl.after( feedback.text );
 	}
-	loadCSS( '//www.mixes.wiki/tools/userscripts/tracklist_editor_copy.css' );
+	loadRawCss( "https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/Tracklist_Editor_copy.css" );
 		
 	tl.show().select().addClass("fixed");
-
-
-	/* clipboard.js
-	var clipboardButton = '<button class="clipboardButton floatL bold green" data-clipboard-target="#mixesdb-TLbox">Copy to clipboard</button>';
-	tl.after( clipboardButton );
-
-	var clipboard = new Clipboard('.clipboardButton');
-	clipboard.on('success', function() {
-	    $('.clipboardButton').removeClass('green').addClass('grey');
-	});
-	*/
 }
 
 // apiTracklist
