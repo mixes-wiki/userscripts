@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mixes.wiki Userscripts Helper (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.10.8.0
+// @version      2024.10.10.9.0
 // @description  Change the look and behaviour of the Mixes.wiki website to enable feature usable by other Mixes.wiki userscripts.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1293952534268084234
@@ -67,10 +67,9 @@ if( actionView && isNs0 && !isMainPage ) {
 
         if( requestPlayerUrl ) {
             log( "requestPlayerUrl: " + requestPlayerUrl );
-            var urlRequest = "https://trackid.net/submitrequest?requestUrl="+requestPlayerUrl+"&keywords="+keywords,
-                multiUrl = "https://www.mixes.wiki/tools/open/?urls="+encodeURIComponent(urlSearch)+","+encodeURIComponent( urlRequest );
+            var urlRequest = "https://trackid.net/submitrequest?requestUrl="+requestPlayerUrl+"&keywords="+keywords;
 
-            linkIcon.attr("href", multiUrl).attr("data-hreforig", urlSearch);
+            linkIcon.attr("href", urlRequest).attr("data-hreforig", urlSearch);
 
             log( "URL changed to: " + multiUrl );
         } else {
