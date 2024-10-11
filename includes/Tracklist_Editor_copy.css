@@ -1,0 +1,205 @@
+/* grid */
+#tlEditor,
+#tlEditor-formActions {
+   display: table;
+    width: 100%;
+}
+#tlEditor section,
+#tlEditor-formActions section {
+    display: table-cell;
+    vertical-align: top;
+}
+
+/* maximize */
+#fieldsetTLeditor.maximized {
+	margin-left: -162px;
+}
+
+/* menu */
+#tlEditor-menu {
+    width: 190px;
+    padding-right: 1em;
+}
+#tlEditor-buttons {
+    margin-top: 3px;
+}
+#tlEditor-textarea-wrapper {
+    width: calc( 100% - 190px - 16px );
+}
+.tlEditor-menu-group + .tlEditor-menu-group,
+#tlEditor-menu-select-reselect {
+	margin-top: 16px;
+}
+
+/* buttons */
+.tlEditor-menu-group {
+    margin-left: 0 !important;
+}
+.tlEditor-menu-group ul {
+	margin: 0;
+}
+.tlEditor-menu-group li {
+    list-style: none;
+    display: inline-block;
+}
+.tlEditor-menu-group:not(:first-of-type) li {
+    margin: .4em .4em 0 0;
+}
+.tlEditor-button {
+    padding: .2em .6em;
+}
+.tlEditor-button,
+#tlEditor-menu-select {
+    background: #eee;
+    color: #444;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    border-radius: .4em;
+}
+.tlEditor-button.big,
+#tlEditor-formActions button:not(:disabled),
+#tlEditor-menu-select-reselect,
+#tlEditor-feedback-noChanges {
+	color: #777 !important; /* optical */
+}
+.tlEditor-button:not(:disabled):hover,
+.tlEditor-button.active,
+#tlEditor-menu-select-reselect:hover {
+    color: #f60 !important;
+}
+.tlEditor-button:disabled {
+	color: #aaa;
+	cursor: default;
+}
+#tlEditor-redo:disabled {
+	display:none;
+}
+#tlEditor-menu-select.active {
+    border-color: #f60 !important;
+}
+.tlEditor-button.selectable:hover{
+	background-color: rgba(255, 204, 0, 0.38) !important;
+}
+
+/* dropdown */
+#tlEditor-menu-select {
+    padding: .2em .2em .2em 3px;
+}
+#tlEditor-menu-select-reselect {
+	font-size: 1.2em;
+    padding: .2em .6em;
+}
+
+/* textarea */
+#tlEditor-textarea {
+    width: 100%;
+}
+#tlEditor textarea {
+    background-color: #fcfcfc;
+}
+#tlEditor-textarea,
+#tlEditor-feedback {
+	margin-bottom: 14px;
+    border-radius: .3em !important;
+}
+.waitingForApi {
+	/* gives visual feedback by little flashing
+	 * but select() does for now
+	 */
+    /* color: transparent; */
+}
+
+/* formActions */
+#tlEditor-formActions-replace,
+#tlEditor-formActions-findReplace-actions,
+#tlEditor-formActions-undoRedo {
+	padding-left: 1em;
+	text-align: right;
+}
+#tlEditor-formActions-findReplace-actions {
+	text-align: left;
+}
+#tlEditor-formActions-findReplace-actions,
+#tlEditor-formActions-undoRedo {
+	width: 1%;
+}
+#tlEditor-formActions textarea {
+	width: 100%;
+}
+
+/* feedback */
+#tlEditor-feedback {
+    padding: .65em .6em .5em .6em;
+    margin-left: -1px;
+    margin-right: -1px;
+}
+#tlEditor-feedback ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+#tlEditor-feedback ul li+li,
+#tlEditor-feedback ul+ul,
+#tlEditor-feedback-topInfo + div,
+#tlEditor-feedback-topInfo + ul,
+#tlEditor-feedback-topInfo-noList + div {
+	margin-top: .5em !important;
+}
+.feedbackDone #tlEditor-textarea:focus {
+    outline: none;
+}
+.feedbackDone #tlEditor-textarea,
+#tlEditor-feedback {
+    border-style: solid;
+    border-width: 1px;
+}
+.tlEditor-feedback-complete #tlEditor-textarea,
+.tlEditor-feedback-complete #tlEditor-feedback {
+    border-color: #090 !important;
+}
+.tlEditor-feedback-complete #tlEditor-feedback {
+    color: #090;
+}
+.tlEditor-feedback-complete #tlEditor-feedback {
+    background-color: #efd;
+}
+.tlEditor-feedback-hint #tlEditor-textarea,
+.tlEditor-feedback-hint #tlEditor-feedback {
+    border-color: rgb(255, 170, 0) !important;
+}
+.tlEditor-feedback-hint #tlEditor-feedback {
+    color: rgb(255, 170, 0);
+}
+.tlEditor-feedback-hint #tlEditor-feedback {
+    background-color: #FFFDDF;
+}
+.tlEditor-feedback-warning #tlEditor-textarea,
+.tlEditor-feedback-warning #tlEditor-feedback {
+    border-color: rgb(255, 0, 0) !important;
+}
+.tlEditor-feedback-warning #tlEditor-feedback {
+    color: rgb(255, 0, 0);
+}
+.tlEditor-feedback-warning #tlEditor-feedback {
+    background-color: #fee;
+}
+#tlEditor-feedback code {
+    padding-left: 0;
+    padding-right: 0;
+    border: 0;
+}
+.tlEditor-feedback-hint .darkorange,
+.tlEditor-feedback-hint #tlEditor-feedback-topInfo-noList {
+	color: #f80 !important;
+}
+#tlEditor-feedback-topInfo-noList .fa {
+	opacity: .9;
+}
+#tlEditor-feedback-rows {
+    color: #fff;
+    background: hsla(0, 0%, 87%, 0.7);
+    text-shadow: 1px 1px hsla(0, 0%, 39%, 0.3);
+    margin-top: -.275em;
+    padding: .2em .4em .2em .3em;
+    border-radius: .2em;
+}
