@@ -267,3 +267,10 @@ a:hover {
 #mdb-searchHint p {
 	margin: 0;
 }
+
+/*
+ * Replaced search
+*/
+#replaced-search .mixeswiki-element {
+	min-height: 28px;
+}
