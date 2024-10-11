@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TrackId.net (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.10.6.1
+// @version      2024.10.10.7.0
 // @description  Change the look and behaviour of certain DJ culture related websites to help contributing to Mixes.wiki, e.g. add copy-paste ready tracklists in wiki syntax.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1261652394799005858
@@ -10,9 +10,9 @@
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/jquery-3.7.1.min.js
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/waitForKeyElements.js
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/youtube_funcs.js
-// @require      https://cdn.jsdelivr.net/gh/Subfader/userscripts@latest/includes/global.js?v-TrackId.net_30
-// @resource     GLOBAL_CSS https://cdn.rawgit.com/Subfader/userscripts/refs/heads/main/includes/global.css?v-TrackId.net_15
-// @resource     SCRIPT_CSS https://cdn.rawgit.com/Subfader/userscripts/refs/heads/main/TrackId.net/script.css?v-TrackId.net_10
+// @require      https://cdn.jsdelivr.net/gh/Subfader/userscripts/includes/global.js?v-TrackId.net_30
+// @resource     GLOBAL_CSS https://cdn.jsdelivr.net/gh/Subfader/userscripts/includes/global.css?v-TrackId.net_19
+// @resource     SCRIPT_CSS https://cdn.jsdelivr.net/gh/Subfader/userscripts/TrackId.net/script.css?v-TrackId.net_11
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
 // @include      http*trackid.net*
@@ -530,7 +530,8 @@ function on_submitrequest() {
 
             var newSearch = '<form action="https://trackid.net/audiostreams" method="GET">';
                 newSearch += create_button( "Search", "replaced-search-button inline", "submit" );
-                newSearch += create_input( keywords, "replaced-search-input inline left-10", "keywords" );
+                newSearch += "&nbsp;&nbsp;";
+                newSearch += create_input( keywords, "replaced-search-input inline", "keywords" );
                 newSearch += '</form>';
 
             jNode.closest(".header-mid.MuiBox-root").replaceWith( newSearch );
