@@ -91,7 +91,7 @@ function loadRawJs( urlVar ) {
         url: urlVar,
         dataType: "text",
         success: function(fileText) {
-            $('head').append( '<script>'+fileText+'</script>' );
+            $('head').append( '<scr' ++ 'ipt>'+fileText+'</scr' ++ 'ipt>' );
         }
     });
 }
