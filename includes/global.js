@@ -82,20 +82,6 @@ function loadRawCss( urlVar ) {
     });
 }
 
-/* 
- * loadRawJs
- *
- */
-function loadRawJs( urlVar ) {
-    $.ajax({
-        url: urlVar,
-        dataType: "text",
-        success: function(fileText) {
-            $('head').append( '<scr' + 'ipt>'+fileText+'</scr' + 'ipt>' );
-        }
-    });
-}
-
 // durToSec
 function durToSec( dur ) {
     var hms = dur.trim();   // your input string
