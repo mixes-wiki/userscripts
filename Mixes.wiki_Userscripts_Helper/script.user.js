@@ -24,12 +24,12 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 // Your Apple Music counry code, e.g. "de"
-var countryCode_switch = "de";
+var countryCode_switch = "";
 
 // Your Apple Music Beta preference
 // Keep 0 to use music.apple.com
 // Set 1 to use beta.music.apple.com (recommended)
-var useBeta = 1;
+var useBeta = 0;
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
