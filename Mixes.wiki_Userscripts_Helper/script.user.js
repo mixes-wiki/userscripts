@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mixes.wiki Userscripts Helper (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.12.2
+// @version      2024.10.12.3
 // @description  Change the look and behaviour of the Mixes.wiki website to enable feature usable by other Mixes.wiki userscripts.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1293952534268084234
@@ -25,12 +25,12 @@
 
 // Your Apple Music counry code, e.g. "de"
 // All country codes: https://www.hiresedition.com/apple-music-country-codes.html
-var countryCode_switch = "";
+var appleMusic_countryCode_switch = "";
 
 // Your Apple Music Beta preference
 // Keep 0 to use music.apple.com
 // Set 1 to use beta.music.apple.com (recommended)
-var useBeta = 0;
+var appleMusic_useBeta = 0;
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -116,21 +116,21 @@ function waitTables(jNode) {
     var item_url = jNode.attr("href").replace("&app=music","");
 
     // override country code
-    logVar( "countryCode_switch", countryCode_switch );
+    logVar( "appleMusic_countryCode_switch", appleMusic_countryCode_switch );
 
-    if( countryCode_switch != "" ) {
-        item_url = item_url.replace( /music.apple.com\/..\//g, "music.apple.com/"+countryCode_switch+"/" );
+    if( appleMusic_countryCode_switch != "" ) {
+        item_url = item_url.replace( /music.apple.com\/..\//g, "music.apple.com/"+appleMusic_countryCode_switch+"/" );
     }
 
     // switch to beta
-    logVar( "useBeta", useBeta );
+    logVar( "appleMusic_useBeta", appleMusic_useBeta );
 
-    if( useBeta == 1 ) {
+    if( appleMusic_useBeta == 1 ) {
         item_url = item_url.replace( "music.apple.com", "beta.music.apple.com" );
     }
 
     // prepare url for switch
-    if( countryCode_switch != "" || useBeta == 1 ) {
+    if( appleMusic_countryCode_switch != "" || appleMusic_useBeta == 1 ) {
         jNode.attr( 'href', item_url );
     }
 }
