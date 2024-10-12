@@ -191,30 +191,32 @@ function apiTracklist( tl, type, genType ) {
 /*
  * redirect on every url change event listener
  */
-function redirectOnUrlChange() {
-	// event listener
-	var pushState = history.pushState;
-	var replaceState = history.replaceState;
-	history.pushState = function() {
-		pushState.apply(history, arguments);
-		window.dispatchEvent(new Event('pushstate'));
-		window.dispatchEvent(new Event('locationchange'));
-	};
-	history.replaceState = function() {
-		replaceState.apply(history, arguments);
-		window.dispatchEvent(new Event('replacestate'));
-		window.dispatchEvent(new Event('locationchange'));
-	};
-	window.addEventListener('popstate', function() {
-		window.dispatchEvent(new Event('locationchange'))
-	});
-	
-	// redirect
-	window.addEventListener('locationchange', function(){
-		var newUrl = location.href;
-		log( 'onlocationchange event occurred > redirecting to ' + newUrl );
-		window.location.replace( newUrl );
-	});
+function redirectOnUrlChange( delay_ms=0 ) {
+    window.setTimeout(function(){
+        // event listener
+        var pushState = history.pushState;
+        var replaceState = history.replaceState;
+        history.pushState = function() {
+            pushState.apply(history, arguments);
+            window.dispatchEvent(new Event('pushstate'));
+            window.dispatchEvent(new Event('locationchange'));
+        };
+        history.replaceState = function() {
+            replaceState.apply(history, arguments);
+            window.dispatchEvent(new Event('replacestate'));
+            window.dispatchEvent(new Event('locationchange'));
+        };
+        window.addEventListener('popstate', function() {
+            window.dispatchEvent(new Event('locationchange'))
+        });
+
+        // redirect
+        window.addEventListener('locationchange', function(){
+            var newUrl = location.href;
+            log( 'onlocationchange event occurred > redirecting to ' + newUrl );
+            window.location.replace( newUrl );
+        });
+    }, delay_ms );
 }
 
 
