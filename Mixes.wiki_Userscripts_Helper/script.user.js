@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mixes.wiki Userscripts Helper (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.12.3
+// @version      2024.10.12.4
 // @description  Change the look and behaviour of the Mixes.wiki website to enable feature usable by other Mixes.wiki userscripts.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1293952534268084234
@@ -23,14 +23,19 @@
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+// Apple Music links: force to open in browser?
+// Keep 0 to use open the Music app
+// Set 1 to open as normal browser tab (recommended)
+var appleMusic_linksOpenInBrowser = 0; // default: 0
+
 // Your Apple Music counry code, e.g. "de"
 // All country codes: https://www.hiresedition.com/apple-music-country-codes.html
-var appleMusic_countryCode_switch = "";
+var appleMusic_countryCode_switch = ""; // default: ""
 
 // Your Apple Music Beta preference
 // Keep 0 to use music.apple.com
 // Set 1 to use beta.music.apple.com (recommended)
-var appleMusic_useBeta = 0;
+var appleMusic_useBeta = 0; // default: 0
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -113,7 +118,13 @@ function waitTables(jNode) {
 
     // https://music.apple.com/us/album/lunch/1739659134?i=1739659140&uo=4&app=music&at=1000l5EX
     // https://music.apple.com/de/search?at=1000l5EX&term=Floating%20Points%20Fast%20Foward
-    var item_url = jNode.attr("href").replace("&app=music","");
+    var item_url = jNode.attr("href");
+
+    // force link to open in browser
+    logVar( "appleMusic_linksOpenInBrowser", appleMusic_linksOpenInBrowser );
+    if( appleMusic_linksOpenInBrowser == 1 ) {
+        item_url = item_url.replace( "&app=music", "" ); // album links have the app parameter by default, search links do not
+    }
 
     // override country code
     logVar( "appleMusic_countryCode_switch", appleMusic_countryCode_switch );
@@ -130,7 +141,15 @@ function waitTables(jNode) {
     }
 
     // prepare url for switch
-    if( appleMusic_countryCode_switch != "" || appleMusic_useBeta == 1 ) {
+    if( appleMusic_linksOpenInBrowser == 1 || appleMusic_countryCode_switch != "" || appleMusic_useBeta == 1 ) {
         jNode.attr( 'href', item_url );
+    }
+
+    // ensure link opens in new tab
+    if( appleMusic_linksOpenInBrowser == 1 ) {
+        jNode.click(function(e) {
+            e.preventDefault();
+            window.open(this.href);
+        });
     }
 }
