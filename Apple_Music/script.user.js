@@ -20,16 +20,19 @@
  */
 
 // Set your counry code, e.g. "de"
-var countryCode_switch = "de";
+var countryCode_switch = "us";
 
 // Keep 0 to use music.apple.com
 // Set 1 to use beta.music.apple.com (recommended)
-var useBeta = 1;
+var useBeta = 0;
 
 /*
  * URL switcher (country code and beta)
  */
 $(document).ready(function(){
+    if( countryCode_switch == "" ) {
+        countryCode_switch = "us"
+    }
     var current_url = $(location).attr("href"); // https://music.apple.com/us/album/double-standard/1741549977?i=1741550406
     var current_domain = document.location.hostname; // music.apple.com
     var current_countryCode = urlPath(1);
