@@ -70,6 +70,7 @@ function mixeswikiElement_select(jNode) {
 
 /*
  * Before anythings starts: Reload the page
+ * Firefox on macOS needs a tiny delay, otherwise there's constant reloading
  */
 redirectOnUrlChange( 20 );
 
