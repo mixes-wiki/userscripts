@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mixes.wiki Userscripts Helper (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.12.5
+// @version      2024.10.12.6
 // @description  Change the look and behaviour of the Mixes.wiki website to enable feature usable by other Mixes.wiki userscripts.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1293952534268084234
@@ -26,11 +26,11 @@
 // Apple Music links: force to open in browser?
 // Keep 0 to use open the Music app
 // Set 1 to open as normal browser tab on beta.music.apple.com (recommended)
-var appleMusic_linksOpenInBrowser = 1; // default: 0
+var appleMusic_linksOpenInBrowser = 0; // default: 0
 
 // Your Apple Music counry code, e.g. "de"
 // All country codes: https://www.hiresedition.com/apple-music-country-codes.html
-var appleMusic_countryCode_switch = "de"; // default: ""
+var appleMusic_countryCode_switch = ""; // default: ""
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
