@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mixes.wiki Userscripts Helper (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.11.2
+// @version      2024.10.12.2
 // @description  Change the look and behaviour of the Mixes.wiki website to enable feature usable by other Mixes.wiki userscripts.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1293952534268084234
@@ -15,6 +15,22 @@
 // @grant        unsafeWindow
 // @run-at       document-end
 // ==/UserScript==
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ * User settings
+ * You need to set these on each update, but updates happen rarely for this script
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// Your Apple Music counry code, e.g. "de"
+// All country codes: https://www.hiresedition.com/apple-music-country-codes.html
+var countryCode_switch = "";
+
+// Your Apple Music Beta preference
+// Keep 0 to use music.apple.com
+// Set 1 to use beta.music.apple.com (recommended)
+var useBeta = 0;
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -79,4 +95,42 @@ if( actionView && isNs0 && !isMainPage ) {
     });
 } else {
     log( "Criteria for mix page not matched." );
+}
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ * Change Apple Music links on tracks
+ * Force link to open in browser instead of the Music app
+ * Change URL to Apple Music Beta and custom country code
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+waitForKeyElements(".aff-iconlink.AppleMusic:not(.processed-userscript)", waitTables);
+function waitTables(jNode) {
+    jNode.addClass("processed-userscript");
+
+    // https://music.apple.com/us/album/lunch/1739659134?i=1739659140&uo=4&app=music&at=1000l5EX
+    // https://music.apple.com/de/search?at=1000l5EX&term=Floating%20Points%20Fast%20Foward
+    var item_url = jNode.attr("href").replace("&app=music","");
+
+    // override country code
+    logVar( "countryCode_switch", countryCode_switch );
+
+    if( countryCode_switch != "" ) {
+        item_url = item_url.replace( /music.apple.com\/..\//g, "music.apple.com/"+countryCode_switch+"/" );
+    }
+
+    // switch to beta
+    logVar( "useBeta", useBeta );
+
+    if( useBeta == 1 ) {
+        item_url = item_url.replace( "music.apple.com", "beta.music.apple.com" );
+    }
+
+    // prepare url for switch
+    if( countryCode_switch != "" || useBeta == 1 ) {
+        jNode.attr( 'href', item_url );
+    }
 }
