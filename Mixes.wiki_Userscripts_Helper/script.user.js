@@ -11,7 +11,7 @@
 // @require      https://cdn.rawgit.com/mixes-wiki/userscripts/refs/heads/main/includes/waitForKeyElements.js
 // @require      https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/global.js?v-Mixes.wiki_1
 // @match        https://www.mixes.wiki/*
-// @noframes1
+// @noframes
 // @grant        unsafeWindow
 // @run-at       document-end
 // ==/UserScript==
