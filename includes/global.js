@@ -1,3 +1,5 @@
+alert( "Test" );
+
 /*
  * Global var definitions
  */
