@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TrackId.net (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.12.2
+// @version      2024.10.12.3
 // @description  Change the look and behaviour of certain DJ culture related websites to help contributing to Mixes.wiki, e.g. add copy-paste ready tracklists in wiki syntax.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1261652394799005858
@@ -71,7 +71,7 @@ function mixeswikiElement_select(jNode) {
 /*
  * Before anythings starts: Reload the page
  */
-redirectOnUrlChange();
+redirectOnUrlChange( 20 );
 
 /*
  * grab url path and fire functions
