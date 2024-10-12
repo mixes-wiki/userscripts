@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mixes.wiki Userscripts Helper (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.12.1
+// @version      2024.10.12.2
 // @description  Change the look and behaviour of the Mixes.wiki website to enable feature usable by other Mixes.wiki userscripts.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1293952534268084234
@@ -24,6 +24,7 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 // Your Apple Music counry code, e.g. "de"
+// All country codes: https://www.hiresedition.com/apple-music-country-codes.html
 var countryCode_switch = "";
 
 // Your Apple Music Beta preference
