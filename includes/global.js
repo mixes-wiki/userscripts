@@ -75,9 +75,34 @@ function loadRawCss( urlVar ) {
     $.ajax({
         url: urlVar,
         dataType: "text",
-        success: function(cssText) {
+        success: function(fileText) {
             // cssText will be a string containing the text of the file
-            $('head').append( '<style>'+cssText+'</style>' );
+            $('head').append( '<style>'+fileText+'</style>' );
+        }
+    });
+}
+
+// durToSec
+function durToSec( dur ) {
+    var hms = dur.trim();   // your input string
+    var a = hms.split(':'); // split it at the colons
+
+    // minutes are worth 60 seconds. Hours are worth 60 minutes.
+    var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
+
+    return seconds;
+}
+
+/* 
+ * loadRawJs
+ *
+ */
+function loadRawJs( urlVar ) {
+    $.ajax({
+        url: urlVar,
+        dataType: "text",
+        success: function(fileText) {
+            $('head').append( '<script>'+fileText+'</script>' );
         }
     });
 }
