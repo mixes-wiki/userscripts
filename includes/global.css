@@ -6,6 +6,14 @@
 }
 
 /*
+ * Highlight color (orange)
+ */
+.mixeswiki-orange,
+.mixeswiki-menu-hl {
+	color: #f60;
+}
+
+/*
  * nolist
  */
 .mixeswiki-nolist {
