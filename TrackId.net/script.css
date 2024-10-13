@@ -1,1 +1,105 @@
-/* Local testing */
+/*
+ * Hide annoying stuff
+ * only robust declarations
+ */
+.dashboard a.Facebook {
+	display: none !important;
+}
+
+/*
+ * Font size of inserted elements weird
+ * Buggy if set to body globally
+ */
+.mixeswiki-menu-hl {
+	font-size: 1rem;
+}
+.mixeswiki-menu,
+.mixeswiki-tid-table th {
+	font-size: .9rem;
+}
+.mixeswiki-info,
+.MuiDataGrid-cellContent:not(img),
+td a.white-link,
+#tlEditor {
+	font-size: .85rem !important;
+}
+
+div[contenteditable="plaintext-only"] {
+	font-family: monospace !important
+}
+
+/*
+ * Menu
+ */
+.mixeswiki-menu-hl {
+	padding: 0;
+	margin: 20px 0 5px;
+}
+.mixeswiki-menu a {
+	font-size: 1em !important;
+	color: #fff !important;
+	text-decoration: none;
+}
+
+/*
+ * Tables
+ */
+.mixeswiki-tid-table td.AudioStreamType img {
+	padding-top: 5px;
+	max-height: 2em;
+}
+
+/*
+ * Page navigation
+ */
+.MuiToolbar-regular .header-right {
+	width: inherit !important;
+}
+.MuiTablePagination-toolbar,
+.MuiTablePagination-toolbar > p,
+.MuiTablePagination-toolbar > div {
+	display: inline !important;
+	position: inherit !important;
+	padding-left: 0;
+}
+
+/*
+ * Search on Mixes.wiki icon link
+ */
+#mixeswiki-searchLink-detailPage {
+	padding-left: 13px;
+}
+.mixeswiki-searchLink-list img {
+	margin-top: 12px !important;
+}
+.mixeswiki-searchLink-list.active,
+.mw-searchLink-list.visited,
+.mixeswiki-searchLink-list:visited  {
+	opacity: .38;
+}
+
+/*
+ * Player
+ */
+.mixeswiki-player-audiostream {
+	margin: 10px 0 -10px;
+}
+
+/*
+ * Replaced search
+ */
+#mixeswiki-replacedSearch {
+	width: 100%;
+	display: table;
+}
+#mixeswiki-replacedSearch .mixeswiki-element {
+	min-height: 28px;
+	display: table-cell;
+}
+#mixeswiki-replacedSearch button {
+	width: 70px;
+	font-weight: bold;
+}
+#mixeswiki-replacedSearch .replaced-search-input {
+	width: calc( 100% - 70px - .5rem ); /* .5rem = .mixeswiki-element padding */
+}
