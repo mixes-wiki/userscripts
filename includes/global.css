@@ -1,10 +1,9 @@
 /*
  * Basics
  */
-.left-10 {
-    margin-left: 10px;
+.mixeswiki-hide {
+	display: none !important;
 }
-
 
 /*
  * Elements
