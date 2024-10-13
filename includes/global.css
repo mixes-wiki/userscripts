@@ -6,6 +6,19 @@
 }
 
 /*
+ * nolist
+ */
+.mixeswiki-nolist {
+	margin-block-start: 0;
+	margin-block-end: 0;
+	padding-inline-start: 0;
+}
+.mixeswiki-nolist li {
+	list-style: none;
+	margin: 0;
+}
+
+/*
  * Elements
  */
 .mixeswiki-element {
