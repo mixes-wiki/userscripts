@@ -158,7 +158,7 @@ function fixTLbox( feedback ) {
 		}
 		tl.after( feedback.text );
 	}
-	loadRawCss( "https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/Tracklist_Editor_copy.css" );
+	loadRawCss( "https://raw.githubusercontent.com/mixes-wiki/userscripts/refs/heads/main/includes/tracklistEditor_copy.css" );
 		
 	tl.show().select().addClass("fixed");
 }
