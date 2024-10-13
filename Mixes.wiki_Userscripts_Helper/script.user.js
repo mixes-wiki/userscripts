@@ -26,11 +26,11 @@
 // Apple Music links: force to open in browser?
 // Keep 0 to use open the Music app
 // Set 1 to open as normal browser tab on beta.music.apple.com (recommended)
-var appleMusic_linksOpenInBrowser = 1; // default: 0
+var appleMusic_linksOpenInBrowser = 0; // default: 0
 
 // Your Apple Music counry code, e.g. "de"
 // All country codes: https://www.hiresedition.com/apple-music-country-codes.html
-var appleMusic_countryCode_switch = "de"; // default: ""
+var appleMusic_countryCode_switch = ""; // default: ""
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
