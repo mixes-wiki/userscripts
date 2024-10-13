@@ -17,7 +17,7 @@
 // ==/UserScript==
 
 // dev environment
-var dev = 1,
+var dev = 0,
     cacheVersion = 42;
 
 
