@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mixes.wiki Userscripts Helper (by Mixes.wiki)
 // @author       User:Martin@Mixes.wiki (Subfader@GitHub)
-// @version      2024.10.12.6
+// @version      2024.10.13.1
 // @description  Change the look and behaviour of the Mixes.wiki website to enable feature usable by other Mixes.wiki userscripts.
 // @homepageURL  https://www.mixes.wiki/w/Help:Mixes.wiki_userscripts
 // @supportURL   https://discord.com/channels/1258107262833262603/1293952534268084234
@@ -26,11 +26,11 @@
 // Apple Music links: force to open in browser?
 // Keep 0 to use open the Music app
 // Set 1 to open as normal browser tab on beta.music.apple.com (recommended)
-var appleMusic_linksOpenInBrowser = 0; // default: 0
+var appleMusic_linksOpenInBrowser = 1; // default: 0
 
 // Your Apple Music counry code, e.g. "de"
 // All country codes: https://www.hiresedition.com/apple-music-country-codes.html
-var appleMusic_countryCode_switch = ""; // default: ""
+var appleMusic_countryCode_switch = "de"; // default: ""
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -107,8 +107,10 @@ if( actionView && isNs0 && !isMainPage ) {
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-waitForKeyElements(".aff-iconlink.AppleMusic:not(.processed-userscript)", waitTables);
-function waitTables(jNode) {
+waitForKeyElements(".aff-iconlink.AppleMusic:not(.processed-userscript)", waitAppleMusicLinks);
+waitForKeyElements(".aff-details-toprow-iTunesTitle a:not(.processed-userscript)", waitAppleMusicLinks);
+
+function waitAppleMusicLinks(jNode) {
     jNode.addClass("processed-userscript");
 
     // https://music.apple.com/us/album/lunch/1739659134?i=1739659140&uo=4&app=music&at=1000l5EX
