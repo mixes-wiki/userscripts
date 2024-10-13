@@ -17,8 +17,9 @@
 // ==/UserScript==
 
 // dev environment
-var dev = 0,
+var dev = 1,
     cacheVersion = 42;
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  *
@@ -32,6 +33,7 @@ var scriptName = "TrackId.net",
 
 loadRawCss( pathRaw + "includes/global.css?v-" + scriptName + "_" + cacheVersion );
 loadRawCss( pathRaw + "TrackId.net/script.css?v-" + scriptName + "_" + cacheVersion );
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  *
