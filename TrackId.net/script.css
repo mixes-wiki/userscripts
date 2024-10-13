@@ -35,7 +35,7 @@ a:hover {
 .mdb-footer-link:visited {
 	color: var(--main-light) !important;
 }
-#mdb-player {
+#miwi-audiostream-player {
 	margin: 30px 0 20px;
 }
 .mdb-rating-wrapper {
@@ -52,7 +52,7 @@ a:hover {
 /*
  * Play button
  */
-#mdb-player + .MuiStack-root {
+#miwi-audiostream-player + .MuiStack-root {
     display: none;
 }
 .music-track-data-grid {
